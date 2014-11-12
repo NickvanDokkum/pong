@@ -2,7 +2,7 @@ package factorys
 {
 	/**
 	 * ...
-	 * @author ...
+	 * @author ... The Hitman
 	 */
 	import flash.display.Sprite;
 	import flash.display.Bitmap;
@@ -13,12 +13,15 @@ package factorys
 		[Embed(source="../../lib/missile.png")]
 		private var ArtBall:Class;
 		private var artBall:Bitmap;
+		
+		//public var platformHit : Platform;
 		public function Ball() 
 		{
+			
 			addEventListener(Event.ADDED_TO_STAGE,init);
 			artBall = new ArtBall();
 			addChild(artBall);
-			hitTestObject(artBall);
+			//artBall.hitTestObject(platformHit);
 			scaleX = 0.2;
 			scaleY = 0.2;
 			

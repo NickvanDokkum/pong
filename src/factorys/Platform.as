@@ -2,12 +2,12 @@ package factorys
 {
 	/**
 	 * ...
-	 * @author ...
+	 * @author ... The Hitman
 	 */
 	import flash.display.Sprite;
 	import flash.display.Bitmap;
 	
-	public class Platform extends AbstractPlatform
+	public class Platform extends Sprite
 	{
 		[Embed(source="../../lib/platform_five.png")]
 		private var ArtPlatform:Class;
@@ -17,10 +17,10 @@ package factorys
 			
 			artPlatform = new ArtPlatform();
 			addChild(artPlatform);
-			hitTestObject(artPlatform);
 			
-			positionX = x = 830;
-			positionY = y = 503;
+			
+			x = 830;
+			y = 503;
 		}
 		
 	}

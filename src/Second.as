@@ -1,24 +1,26 @@
 package 
 {
-	import factorys.AbstractPlatform;
+	
 	import factorys.Ball;
-	import factorys.PlatformFactory;
+	
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
 	/**
 	 * ...
-	 * @author Nick van Dokkum
+	 * @author ... The Hitman
 	 */
-	public class Main extends Sprite 
+	public class Second extends Sprite 
 	{
 		//var level : Level; 
 		public var _Game:YoshaGame;
 		public var ball : Ball;
-		public function Main():void 
+		public function Second():void 
 		{
-			var ball : Ball = new Ball;
-			addChild(ball);
+			//var ball : Ball = new Ball;
+			//addChild(ball);
+			//ball.hitTestObject(platform);
+			
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 		}
