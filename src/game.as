@@ -1,15 +1,18 @@
 package  
 {
+	import Players;
 	/**
 	 * ...
 	 * @author Nick van Dokkum
 	 */
-	public class game 
+	public class Game 
 	{
-		
-		public function game() 
+		public var _chars:Players;
+		public var _ball:Ball;
+		public function Game() 
 		{
-			
+			_chars = new Players();
+			_ball = new Ball();
 		}
 		
 	}
