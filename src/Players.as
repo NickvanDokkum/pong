@@ -2,7 +2,6 @@ package
 {
 	import flash.display.Bitmap;
 	import flash.display.MovieClip;
-	import flash.display.Bitmap;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	/**
@@ -17,9 +16,9 @@ package
 		private var collision1:Boolean = true;
 		private var collision2:Boolean = true;
 		
-		[Embed(source="../../art/chara_design.jpg")]
+		[Embed(source="../art/chara_design.jpg")]
 		private var Char1:Class;
-		[Embed(source="../../art/chara_design.jpg")]
+		[Embed(source="../art/chara_design.jpg")]
 		private var Char2:Class;
 		
 		private var player1:Bitmap;
@@ -135,6 +134,10 @@ package
 				if(player2.x > 0){
 					player2.x -= speed;
 				}
+				if (player2.scaleX != -1) {
+					player2.scaleX = -1;
+					player2.x += player2.width;
+				}
 			}
 			if (buttonDown == true) {
 				if (gravity2 != 0) {
@@ -142,8 +145,13 @@ package
 				}
 			}
 			if (buttonRight == true) {
-				if(player2.x < Main.main.stage.stageWidth - player2.width){
+				if(player2.x < 1000){
 					player2.x += speed;
+				}
+				if (player2.scaleX != 1)
+				{
+					player2.scaleX = 1;
+					player2.x -= player2.width;
 				}
 			}
 			if (buttonW == true) {
@@ -156,6 +164,10 @@ package
 				if(player1.x > 0){
 					player1.x -= speed;
 				}
+				if (player2.scaleX != -1) {
+					player2.scaleX = -1;
+					player2.x += player2.width;
+				}
 			}
 			if (buttonS == true) {
 				if(gravity1 != 0){
@@ -163,8 +175,12 @@ package
 				}
 			}
 			if (buttonD == true) {
-				if(player1.y < Main.main.stage.stageWidth - player2.width){
+				if(player1.y < 1000){
 					player1.x += speed;
+				}
+				if (player1.scaleX != 1) {
+					player1.scaleX = 1;
+					player1.x -= player1.width;
 				}
 			}
 		}
