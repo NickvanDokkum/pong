@@ -4,6 +4,8 @@ package
 	import flash.display.MovieClip;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
 	/**
 	 * ...
 	 * @author Nick van Dokkum
@@ -32,7 +34,14 @@ package
 		private var buttonLeft:Boolean = false;
 		private var buttonDown:Boolean = false;
 		private var buttonRight:Boolean = false;
-			
+		private var buttonSpace:Boolean = false;
+		private var buttonEnter:Boolean = false;
+		private var attacking1:Boolean = false;
+		private var attacking2:Boolean = false;
+		
+		private var attackTimer1:Timer = new Timer(750, 1);
+		private var attackTimer2:Timer = new Timer(750, 1);
+		
 		public function Players() 
 		{
 			
@@ -73,6 +82,12 @@ package
 			if (e.keyCode == 39) {
 				buttonRight = true;
 			}
+			if (e.keyCode == 32) {
+				buttonSpace = true;
+			}
+			if (e.keyCode == 13) {
+				buttonEnter = true;
+			}
 		}
 		public function onKeyUp(e:KeyboardEvent):void {
 			if (e.keyCode == 87) {
@@ -98,6 +113,12 @@ package
 			}
 			if (e.keyCode == 39) {
 				buttonRight = false;
+			}
+			if (e.keyCode == 32) {
+				buttonSpace = false;
+			}
+			if (e.keyCode == 13) {
+				buttonEnter = false;
 			}
 		}
 		private function updateFunction(e:Event):void
@@ -175,7 +196,7 @@ package
 				}
 			}
 			if (buttonD == true) {
-				if(player1.y < 1000){
+				if(player1.x < 1000){
 					player1.x += speed;
 				}
 				if (player1.scaleX != 1) {
@@ -183,6 +204,30 @@ package
 					player1.x -= player1.width;
 				}
 			}
+			if (buttonSpace == true && attacking1 == false)
+			{
+				attackTimer1.addEventListener(TimerEvent.TIMER, timerReset1);
+				attackTimer1.start();
+				attacking1 = true;
+				trace("attacking");
+			}
+			if (buttonEnter == true && attacking2 == false)
+			{
+				attackTimer2.addEventListener(TimerEvent.TIMER, timerReset2);
+				attackTimer2.start();
+				attacking2 = true;
+				trace("attacking2");
+			}
+		}
+		
+		function timerReset1(event:TimerEvent):void {
+			attacking1 = false;
+			trace("attacked");
+		}
+		
+		function timerReset2(event:TimerEvent):void {
+			attacking2 = false;
+			trace("attacked2");
 		}
 	}
 }

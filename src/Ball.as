@@ -15,11 +15,13 @@ package
 		
 		private var ball:Bitmap;
 		
+		public var hit:Number = 0;
+		
 		private var bouncetimes:Number = 0;
 		private var gravity:Number = 0;
 		private var gravIncrease:Boolean = true;
 		
-		private var ballSpeed:Number = 10; //- is left, + is right
+		private var ballSpeed:Number = 5; //- is left, + is right
 		private var ballRight:Boolean = true;
 		public function Ball() 
 		{
@@ -33,10 +35,10 @@ package
 		private function updateFunctionBall(e:Event):void
 		{
 			ball.x += ballSpeed;
-			if (ballRight == true) {
+			if (ballRight == true && ballSpeed < 15) {
 				ballSpeed += 0.01;
 			}
-			else
+			else if (ballRight == false && ballSpeed < 15)
 			{
 				ballSpeed -= 0.01;
 			}
