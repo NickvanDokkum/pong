@@ -5,34 +5,25 @@ package
 	 * @author ... The Hitman
 	 */
 	
-	import factorys.Ball;
-	import factorys.Platform;
-	
+	import YBall;
+	import Platform;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	public class Level extends Sprite
 	{
-		public var ball : Ball;
+		public var ball : YBall;
 		public var platform : Platform;
 		
 		public function Level() 
 		{
-			
 			addEventListener(Event.ADDED_TO_STAGE,init);
 			
-			var ball : Ball = new Ball;
+			ball  = new YBall;
 			addChild(ball);
 			
-			var platform : Platform = new Platform;
+			
+			platform = new Platform;
 			addChild(platform);
-			
-			
-			
-			
-			
-			
-		
-			
 			
 		}
 		
@@ -44,13 +35,13 @@ package
 		
 		private function loop(e:Event):void 
 		{
-			if (ball.hitTestObject(platform) == true)
+			
+			if (ball.hitTestObject(platform))
 			{
-				y -= 0;
-			}
+				ball.fly = false;
+				ball.y += 0;
 				
+			}	
 		}
-		
 	}
-
 }

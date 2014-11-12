@@ -1,5 +1,4 @@
-package factorys 
-{
+package  {
 	/**
 	 * ...
 	 * @author ... The Hitman
@@ -7,24 +6,31 @@ package factorys
 	import flash.display.Sprite;
 	import flash.display.Bitmap;
 	import flash.events.Event;
-	public class Ball extends Sprite
+	
+	// temporary class. not perminant
+	public class YBall extends Sprite
 	{
-		private var fly:Boolean = true;
-		[Embed(source="../../lib/missile.png")]
+		public var fly:Boolean = true;
+		[Embed(source="../lib/missile.png")]
 		private var ArtBall:Class;
 		private var artBall:Bitmap;
 		
-		//public var platformHit : Platform;
-		public function Ball() 
+		
+		public function YBall() 
 		{
 			
-			addEventListener(Event.ADDED_TO_STAGE,init);
+			// adding a event listener
+			addEventListener(Event.ADDED_TO_STAGE, init);
+			
+			// temporary art/ball
 			artBall = new ArtBall();
 			addChild(artBall);
-			//artBall.hitTestObject(platformHit);
+			
+			// temporary scale
 			scaleX = 0.2;
 			scaleY = 0.2;
 			
+			// temporary position
 			x = 830;
 			y = 20;
 		}
