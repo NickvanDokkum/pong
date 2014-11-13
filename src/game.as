@@ -13,7 +13,7 @@ package
 		public function Game() 
 		{
 			_chars = new Players();
-			_ball = new Ball();
+			//_ball = new Ball();
 		}
 		
 		public function restart1()

@@ -5,16 +5,17 @@ package
 	 * @author ... The Hitman
 	 */
 	
-	import YBall;
+	import Ball;
 	import Platform;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	public class Level extends Sprite
 	{
-		public var ball : YBall;
+		public var ball : Ball;
 		public var platform : Platform;
 		public var background :BackGroundTemp;
 		public var tree : Tree;
+		public var player : Players;
 		
 		
 		private var platforms:Array;
@@ -29,7 +30,7 @@ package
 			tree = new Tree;
 			addChild(tree);
 			
-			ball  = new YBall;
+			ball  = new Ball;
 			addChild(ball);
 			
 			//adding the platforms
@@ -78,6 +79,9 @@ package
 			platforms[5].scaleX = 0.3;
 			platforms[5].scaleY = 0.3;
 			
+			player = new Players;
+			addChild(player);
+			
 		}
 		
 		private function init(e:Event):void 
@@ -91,24 +95,25 @@ package
 			
 			if (platforms[0].hitTestPoint(ball.x,ball.y + 16,true))
 			{
-				ball.fly = false;
+				
 				
 			}
 			else if (platforms[0].hitTestPoint(ball.x, ball.y -16, true))
 			{
-				ball.fly = false;
+				
 				
 			}
 			else if (platforms[0].hitTestPoint(ball.x - 16, ball.y, true))
 			{
-				ball.fly = false;
+				
 				
 			}
 			else if (platforms[0].hitTestPoint(ball.x + 16, ball.y, true))
 			{
-				ball.fly = false;
+				
 				
 			}
+			
 			
 		}
 	}

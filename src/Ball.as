@@ -2,15 +2,16 @@ package
 {
 	import flash.display.Bitmap;
 	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.events.Event;
 
 	/**
 	 * ...
 	 * @author Nick van Dokkum
 	 */
-	public class Ball 
+	public class Ball extends Sprite
 	{
-		[Embed(source="../art/chara_design.jpg")]
+		[Embed(source="../lib/ball_02.png")]
 		private var BallArt:Class;
 		
 		private var ball:Bitmap;
@@ -26,6 +27,8 @@ package
 		public function Ball() 
 		{
 			ball = new BallArt();
+			ball.scaleX = 0.2;
+			ball.scaleY = 0.2;
 			ball.x = 600;
 			ball.y = 300;
 			Main.main.stage.addChild(ball);
