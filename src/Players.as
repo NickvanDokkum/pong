@@ -18,8 +18,14 @@ package
 		private var speed:Number = 10;
 		private var gravity1:Number = 0;
 		private var gravity2:Number = 0;
-		private var collision1:Boolean = true;
-		private var collision2:Boolean = true;
+		private var collision11:Boolean = false;	//boven
+		private var collision12:Boolean = false;	// links
+		private var collision13:Boolean = false;	// beneden
+		private var collision14:Boolean = false;	// rechts
+		private var collision21:Boolean = false;	// boven
+		private var collision22:Boolean = false;	// links
+		private var collision23:Boolean = false;	// beneden
+		private var collision24:Boolean = false;	// rechts
 		
 		[Embed(source="../art/chara_design.jpg")]
 		private var Char1:Class;
@@ -58,9 +64,11 @@ package
 			
 			player1 = new Char1();
 			player1.y = 600;
+			player1.x = 50;
 			Main.main.stage.addChild(player1);
 			
 			player2 = new Char2();
+			player2.x = 1000;
 			player2.y = 600;
 			Main.main.stage.addChild(player2);
 		}
@@ -89,7 +97,6 @@ package
 			if (e.keyCode == 39) {
 				buttonRight = true;
 			}
-
 			if (e.keyCode == 32) {
 				buttonSpace = true;
 			}
@@ -123,47 +130,45 @@ package
 			if (e.keyCode == 39) {
 				buttonRight = false;
 			}
-
 			if (e.keyCode == 32) {
 				buttonSpace = false;
 			}
 			if (e.keyCode == 13) {
 				buttonEnter = false;
 			}
-
 		}
 		private function updateFunction(e:Event):void
 		{
-			if (!collision1) {
+			if (!collision13) {
 				gravity1 += 0.2;
-				if (player1.y > 600) {
-					gravity1 = 0;
-					collision1 = true;
-				}
 			}
-			while (player1.y > 600) {
-				player1.y --;
+			else
+			{
+				gravity1 = 0;
 			}
-			if (!collision2) {
+			if (!collision23) {
 				gravity2 += 0.2;
-				if (player2.y > 600) {
-					gravity2 = 0;
-					collision2 = true;
-				}
 			}
-			while (player2.y > 600) {
-				player2.y --;
+			else
+			{
+				gravity2 = 0;
+			}
+			if (collision11) {
+				gravity1 = -gravity1;
+			}
+			if (collision21) {
+				gravity2 = -gravity2;
 			}
 			player1.y += gravity1;
 			player2.y += gravity2;
 			if (buttonUp == true) {
-				if(player2.y > 0 && collision2 == true){
+				if(collision23){
 					gravity2 = -13;
-					collision2 = false;
+					collision23 = false;
 				}
 			}
 			if (buttonLeft == true) {
-				if(player2.x > 0){
+				if(!collision22){
 					player2.x -= speed;
 				}
 				if (player2Right == false) {
@@ -173,12 +178,12 @@ package
 				}
 			}
 			if (buttonDown == true) {
-				if (gravity2 != 0) {
+				if (!collision23) {
 					gravity2 += 0.3;
 				}
 			}
 			if (buttonRight == true) {
-				if(player2.x < 1000){
+				if(!collision24){
 					player2.x += speed;
 				}
 				if (player2Right)
@@ -189,13 +194,13 @@ package
 				}
 			}
 			if (buttonW == true) {
-				if(player1.y > 0 && collision1 == true){
+				if(!collision13){
 					gravity1 = -13;
-					collision1 = false;
+					collision11 = false;
 				}
 			}
 			if (buttonA == true) {
-				if(player1.x > 0){
+				if(!collision12){
 					player1.x -= speed;
 				}
 				if (player1Right == false) {
@@ -205,17 +210,12 @@ package
 				}
 			}
 			if (buttonS == true) {
-				if(gravity1 != 0){
+				if(!collision13){
 					gravity1 += 0.3;
 				}
 			}
 			if (buttonD == true) {
-
-				if(player1.y < 1000){
-					
-				}
-				if(player1.x < 1000){
-
+				if(!collision14){
 					player1.x += speed;
 				}
 				if (player1Right) {
@@ -224,7 +224,6 @@ package
 					player1.x -= player1.width;
 				}
 			}
-
 			if (buttonSpace == true && attacking1 == false)
 			{
 				attackTimer1.addEventListener(TimerEvent.TIMER, timerReset1);
@@ -240,13 +239,11 @@ package
 				trace("attacking2");
 			}
 		}
-		
-		function timerReset1(event:TimerEvent):void {
+		private function timerReset1(event:TimerEvent):void {
 			attacking1 = false;
 			trace("attacked");
 		}
-		
-		function timerReset2(event:TimerEvent):void {
+		private function timerReset2(event:TimerEvent):void {
 			attacking2 = false;
 			trace("attacked2");
 
@@ -262,6 +259,54 @@ package
 		{
 			Main.main.stage.removeChild(player1);
 			Main.main.stage.removeChild(player2);
+		}
+		public function collTop1() {
+			collision11 = true;
+		}
+		public function noCollTop1() {
+			collision11 = false;
+		}
+		public function collLeft1() {
+			collision12 = true;
+		}
+		public function noCollLeft1() {
+			collision12 = false;
+		}
+		public function collBot1() {
+			collision13 = true;
+		}
+		public function noCollBot1() {
+			collision13 = false;
+		}
+		public function collRight1() {
+			collision14 = true;
+		}
+		public function noCollRight1() {
+			collision14 = false;
+		}
+		public function collTop2() {
+			collision21 = true;
+		}
+		public function noCollTop2() {
+			collision21 = false;
+		}
+		public function collLeft2() {
+			collision22 = true;
+		}
+		public function noCollLeft2() {
+			collision22 = false;
+		}
+		public function collBot2() {
+			collision23 = true;
+		}
+		public function noCollBot2() {
+			collision23 = false;
+		}
+		public function collRight2() {
+			collision24 = true;
+		}
+		public function noCollRight2() {
+			collision24 = false;
 		}
 	}
 }
