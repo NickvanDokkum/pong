@@ -41,6 +41,8 @@ package
 			platforms.push(new Platform(4));
 			platforms.push(new Platform(5));
 			platforms.push(new Platform(6));
+			platforms.push(new Platform(7));
+			platforms.push(new Platform(8));
 		
 
 			
@@ -78,6 +80,16 @@ package
 			platforms[5].y = 555;
 			platforms[5].scaleX = 0.3;
 			platforms[5].scaleY = 0.3;
+			// fifth platform position
+			platforms[6].x = 138;
+			platforms[6].y = 418;
+			platforms[6].scaleX = 0.2;
+			platforms[6].scaleY = 0.35;
+			// sixth platform position
+			platforms[7].x = 965;
+			platforms[7].y = 660;
+			platforms[7].scaleX = 1;
+			platforms[7].scaleY = 1;
 			
 			player = new Players;
 			addChild(player);
@@ -93,24 +105,45 @@ package
 		private function loop(e:Event):void 
 		{
 			
-			if (platforms[0].hitTestPoint(ball.x,ball.y + 16,true))
+			if (platforms[0].hitTestPoint(ball.x,ball.y ,true))
 			{
-				
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				ball.collBot();
 			}
-			else if (platforms[0].hitTestPoint(ball.x, ball.y -16, true))
+			else if (platforms[0].hitTestPoint(ball.x, ball.y , true))
 			{
 				
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				
 			}
-			else if (platforms[0].hitTestPoint(ball.x - 16, ball.y, true))
+			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
 			{
-				
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				
 			}
-			else if (platforms[0].hitTestPoint(ball.x + 16, ball.y, true))
+			
+			else if (platforms[7].hitTestPoint(player.x,player.y ,true))
 			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collBot2();
+			}
+			else if (platforms[0].hitTestPoint(ball.x, ball.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+			}
+			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+			}
+			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				
 			}
 			

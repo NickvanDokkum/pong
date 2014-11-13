@@ -22,7 +22,10 @@ package  {
 		private var ArtPlatform_five:Class;
 		[Embed(source = "../lib/Platform_2.png")]
 		private var ArtPlatform_six:Class;
-		
+		[Embed(source="../lib/Platform_Floating_floor.png")]
+		private var ArtPlatform_seven:Class;
+		[Embed(source="../lib/Platform_Floating_floor_middle.png")]
+		private var ArtPlatform_eight:Class;
 		
 	
 		private var holder : Bitmap;
@@ -54,6 +57,12 @@ package  {
 					break;
 				case 6:
 					holder = new ArtPlatform_six();
+					break;
+				case 7:
+					holder = new ArtPlatform_seven();
+					break;
+				case 8:
+					holder = new ArtPlatform_eight();
 					break;
 			
 				

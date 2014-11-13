@@ -200,7 +200,7 @@ package
 				}
 			}
 			if (buttonA == true) {
-				if(!collision12){
+				if(!collision13){
 					player1.x -= speed;
 				}
 				if (player1Right == false) {
