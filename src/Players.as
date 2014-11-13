@@ -2,6 +2,7 @@ package
 {
 	import flash.display.Bitmap;
 	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 
@@ -12,7 +13,7 @@ package
 	 * ...
 	 * @author Nick van Dokkum
 	 */
-	public class Players 
+	public class Players extends Sprite
 	{
 		private var speed:Number = 10;
 		private var gravity1:Number = 0;
