@@ -16,6 +16,7 @@ package
 		public var background :BackGroundTemp;
 		public var tree : Tree;
 		
+		
 		private var platforms:Array;
 		
 		public function Level() 
