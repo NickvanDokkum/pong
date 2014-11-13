@@ -96,7 +96,7 @@ package
 			if (platforms[0].hitTestPoint(ball.x,ball.y + 16,true))
 			{
 				
-				
+				ball.collBot();
 			}
 			else if (platforms[0].hitTestPoint(ball.x, ball.y -16, true))
 			{

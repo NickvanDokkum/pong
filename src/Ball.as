@@ -30,7 +30,7 @@ package
 			ball.scaleX = 0.2;
 			ball.scaleY = 0.2;
 			ball.x = 600;
-			ball.y = 300;
+			ball.y = 100;
 			Main.main.stage.addChild(ball);
 			
 			Main.main.stage.addEventListener(Event.ENTER_FRAME, updateFunctionBall);
