@@ -153,6 +153,12 @@ package
 			{
 				gravity2 = 0;
 			}
+			if (collision11) {
+				gravity1 = -gravity1;
+			}
+			if (collision21) {
+				gravity2 = -gravity2;
+			}
 			player1.y += gravity1;
 			player2.y += gravity2;
 			if (buttonUp == true) {
