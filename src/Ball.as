@@ -35,7 +35,8 @@ package
 		private function updateFunctionBall(e:Event):void
 		{
 			ball.x += ballSpeed;
-			if (ballRight == true && ballSpeed < 15) {
+			if (ballRight == true && ballSpeed < 15)
+			{
 				ballSpeed += 0.01;
 			}
 			else if (ballRight == false && ballSpeed < 15)
@@ -43,47 +44,11 @@ package
 				ballSpeed -= 0.01;
 			}
 			ball.y += gravity;
-			if (gravIncrease == true) {
+			if (gravIncrease == true)
+			{
 				gravity += 0.2;
 			}
-			if (ball.y >= 600)
-			{
-				while (ball.y >= 600)
-				{
-					ball.y --;
-				}
-				if (gravity < 5)
-				{
-					gravity = 0;
-					bouncetimes = 0;
-					gravIncrease = false;
-				}
-				else
-				{
-					gravity = -gravity + bouncetimes;
-					bouncetimes += 0.5;
-					gravIncrease = true;
-				}
-			}
-			if (ball.x >= 1000)
-			{
-				ballSpeed = -ballSpeed;
-				ballRight = false;
-				while (ball.x >= 1000)
-				{
-					ball.x --;
-				}
-			}
-			else if (ball.x <= 50)
-			{
-				ballSpeed = -ballSpeed;
-				ballRight = true;
-				while (ball.x <= 50)
-				{
-					ball.x ++;
-				}
-			}
-			else if (ball.y < 0 -ball.width)
+			if (ball.y < 0 -ball.width)
 			{
 				if (lastHit == 1) {
 					Game.game.restart1();
@@ -94,7 +59,36 @@ package
 				}
 			}
 		}
-		public function hitRight(  ) {
+		public function collTop()
+		{
+			gravity = -gravity;
+		}
+		public function collBot()
+		{
+			if (gravity < 5)
+			{
+				gravity = 0;
+				bouncetimes = 0;
+				gravIncrease = false;
+			}
+			else
+			{
+				gravity = -gravity + bouncetimes;
+				bouncetimes += 0.5;
+				gravIncrease = true;
+			}
+		}
+		public function collRight()
+		{
+			ballSpeed = -ballSpeed;
+			ballRight = false;
+		}
+		public function collLeft()
+		{
+			ballSpeed = -ballSpeed;
+			ballRight = true;
+		}
+		public function hitRight() {
 			if (ballSpeed > 0) {
 				ballSpeed = -ballSpeed;
 			}
@@ -102,7 +96,7 @@ package
 			gravity = -10;
 			gravIncrease = true;
 		}
-		public function hitLeft(  ) {
+		public function hitLeft() {
 			if (ballSpeed < 0) {
 				ballSpeed = -ballSpeed;
 			}
