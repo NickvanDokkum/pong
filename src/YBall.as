@@ -11,7 +11,7 @@ package  {
 	public class YBall extends Sprite
 	{
 		public var fly:Boolean = true;
-		[Embed(source="../lib/missile.png")]
+		[Embed(source="../lib/ball_02.png")]
 		private var ArtBall:Class;
 		private var artBall:Bitmap;
 		
@@ -27,8 +27,8 @@ package  {
 			addChild(artBall);
 			
 			// temporary scale
-			scaleX = 0.2;
-			scaleY = 0.2;
+			scaleX = 0.1;
+			scaleY = 0.1;
 			
 			// temporary position
 			x = 830;

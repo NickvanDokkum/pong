@@ -84,7 +84,7 @@ package
 				}
 			}
 		}
-		public function hitRight() {
+		public function hitRight(  ) {
 			if (ballSpeed > 0) {
 				ballSpeed = -ballSpeed;
 			}
@@ -92,7 +92,7 @@ package
 			gravity = -10;
 			gravIncrease = true;
 		}
-		public function hitLeft() {
+		public function hitLeft(  ) {
 			if (ballSpeed < 0) {
 				ballSpeed = -ballSpeed;
 			}

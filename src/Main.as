@@ -1,9 +1,6 @@
 package 
 {
-<<<<<<< HEAD
 	import YBall;
-=======
->>>>>>> origin/master
 	import flash.display.Sprite;
 	import flash.events.Event;
 	/**
@@ -12,10 +9,8 @@ package
 	 */
 	public class Main extends Sprite 
 	{
-<<<<<<< HEAD
-=======
 		public static var main: Main;
-		public var _game:Game;
+		public var _game :Game;
 		//var level : Level; 
 		//public var _Game:YoshaGame;
 		public function Main():void 
@@ -35,6 +30,6 @@ package
 		
 		
 		
->>>>>>> origin/master
+
 	}
 }
