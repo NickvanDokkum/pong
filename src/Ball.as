@@ -15,7 +15,7 @@ package
 		
 		private var ball:Bitmap;
 		
-		public var hit:Number = 0;
+		public var lastHit:Number = 0;
 		
 		private var bouncetimes:Number = 0;
 		private var gravity:Number = 0;
@@ -83,6 +83,16 @@ package
 					ball.x ++;
 				}
 			}
+			else if (ball.y < 0 -ball.width)
+			{
+				if (lastHit == 1) {
+					Game.game.restart1();
+				}
+				else
+				{
+					Game.game.restart2();
+				}
+			}
 		}
 		public function hitRight(  ) {
 			if (ballSpeed > 0) {
@@ -98,6 +108,18 @@ package
 			}
 			gravity = -10;
 			gravIncrease = true;
+		}
+		public function restart()
+		{
+			ball.x = 600;
+			ball.y = 300;
+			gravIncrease = true;
+			gravity = 0;
+			bouncetimes = 0;
+		}
+		public function destroy()
+		{
+			Main.main.stage.removeChild(ball);
 		}
 	}
 }

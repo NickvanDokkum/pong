@@ -27,6 +27,8 @@ package
 		
 		private var player1:Bitmap;
 		private var player2:Bitmap;
+		private var player1Right:Boolean;
+		private var player2Right:Boolean;
 		
 		private var buttonW:Boolean = false;
 		private var buttonA:Boolean = false;
@@ -163,7 +165,8 @@ package
 				if(player2.x > 0){
 					player2.x -= speed;
 				}
-				if (player2.scaleX != -1) {
+				if (player2Right == false) {
+					player2Right = true;
 					player2.scaleX = -1;
 					player2.x += player2.width;
 				}
@@ -177,9 +180,10 @@ package
 				if(player2.x < 1000){
 					player2.x += speed;
 				}
-				if (player2.scaleX != 1)
+				if (player2Right)
 				{
 					player2.scaleX = 1;
+					player2Right = false;
 					player2.x -= player2.width;
 				}
 			}
@@ -193,9 +197,10 @@ package
 				if(player1.x > 0){
 					player1.x -= speed;
 				}
-				if (player2.scaleX != -1) {
-					player2.scaleX = -1;
-					player2.x += player2.width;
+				if (player1Right == false) {
+					player1.scaleX = -1;
+					player1Right = true;
+					player1.x += player2.width;
 				}
 			}
 			if (buttonS == true) {
@@ -206,13 +211,15 @@ package
 			if (buttonD == true) {
 
 				if(player1.y < 1000){
-
+					
+				}
 				if(player1.x < 1000){
 
 					player1.x += speed;
 				}
-				if (player1.scaleX != 1) {
+				if (player1Right) {
 					player1.scaleX = 1;
+					player1Right = false;
 					player1.x -= player1.width;
 				}
 			}
@@ -242,6 +249,18 @@ package
 			attacking2 = false;
 			trace("attacked2");
 
+		}
+		public function restart()
+		{
+			player1.x = 50;
+			player1.y = 600;
+			player2.x = 1000;
+			player2.y = 600;
+		}
+		public function destroy()
+		{
+			Main.main.stage.removeChild(player1);
+			Main.main.stage.removeChild(player2);
 		}
 	}
 }
