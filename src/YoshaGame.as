@@ -2,10 +2,9 @@ package
 {
 	/**
 	 * ...
-	 * @author ...
+	 * @author ... The Hitman
 	 */
-	import factorys.AbstractPlatform;
-	import factorys.PlatformFactory;
+	
 	import flash.display.Sprite;
 	import flash.events.Event;
 	public class YoshaGame extends Sprite

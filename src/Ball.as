@@ -94,16 +94,16 @@ package
 				}
 			}
 		}
-		public function hitRight() {
-			if (ballSpeed < 0) {
+		public function hitRight(  ) {
+			if (ballSpeed > 0) {
 				ballSpeed = -ballSpeed;
 			}
 			bouncetimes = 0;
 			gravity = -10;
 			gravIncrease = true;
 		}
-		public function hitLeft() {
-			if (ballSpeed > 0) {
+		public function hitLeft(  ) {
+			if (ballSpeed < 0) {
 				ballSpeed = -ballSpeed;
 			}
 			gravity = -10;

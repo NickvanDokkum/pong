@@ -1,5 +1,6 @@
 package 
 {
+	import YBall;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	/**
@@ -9,9 +10,9 @@ package
 	public class Main extends Sprite 
 	{
 		public static var main: Main;
-		public var _game:Game;
-		//var level : Level; 
-		//public var _Game:YoshaGame;
+		public var _game :Game;
+		public var level : Level; 
+		public var _gameYosha:YoshaGame;
 		public function Main():void 
 		{
 			if (stage) init();
@@ -20,15 +21,11 @@ package
 		
 		private function init(e:Event = null):void 
 		{
+			removeEventListener(Event.ADDED_TO_STAGE, init);
 			main = this;
 			_game = new Game;
-			//_Game = new YoshaGame;
+			_gameYosha = new YoshaGame;
+			addChild(_gameYosha);
 		}
-		
-		
-		
-		
-		
 	}
-	
 }
