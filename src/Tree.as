@@ -4,7 +4,7 @@ package
 	import flash.display.Bitmap;
 	/**
 	 * ...
-	 * @author ...
+	 * @author ... The Hitman
 	 */
 	public class Tree extends Sprite
 	{
@@ -20,12 +20,20 @@ package
 		
 		public function Tree() 
 		{
-			artTree_one = new ArtTree_one;
+			artTree_one = new ArtTree_two;
 			addChild(artTree_one);
-			artTree_one.scaleX = -0.42;
-			artTree_one.scaleY = 0.42;
-			artTree_one.x = 440;
-			artTree_one.y = 289;
+			artTree_one.scaleX = -0.25;
+			artTree_one.scaleY = 0.25;
+			artTree_one.x = 360;
+			artTree_one.y = 20;
+		
+			
+			artTree_two = new ArtTree_two;
+			addChild(artTree_two);
+			artTree_two.scaleX = 0.50;
+			artTree_two.scaleY = 0.50;
+			artTree_two.x = 917;
+			artTree_two.y = 3;
 			
 		}
 		

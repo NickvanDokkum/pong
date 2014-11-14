@@ -11,7 +11,7 @@ package
 	public class BackGroundTemp extends Sprite
 	{
 		
-		[Embed(source = "../lib/level_lay_out-01.png")]
+		[Embed(source="../lib/background_fixed_01.png")]
 		private var BgArt : Class;
 		private var bgArt : Bitmap;
 		

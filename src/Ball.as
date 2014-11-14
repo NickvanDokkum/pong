@@ -27,8 +27,8 @@ package
 		public function Ball() 
 		{
 			ball = new BallArt();
-			ball.scaleX = 0.2;
-			ball.scaleY = 0.2;
+			ball.scaleX = 0.1;
+			ball.scaleY = 0.1;
 			ball.x = 600;
 			ball.y = 100;
 			Main.main.stage.addChild(ball);
