@@ -70,7 +70,6 @@ package
 			Main.main.stage.addEventListener(Event.ENTER_FRAME, updateFunction);
 		}
 		private function updateFunction(e:Event) {
-			trace(score11.totalFrames);
 			if (score01.currentFrame >= score01.totalFrames - 2) {
 				if (Main.main.stage.contains(score01)) {
 					score01.stop();
