@@ -52,7 +52,7 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="lib\THE_SCORES.SWC" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

@@ -5,10 +5,10 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
-
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
-
+	import flash.media.Sound;
+	import flash.net.URLRequest; 
 	/**
 	 * ...
 	 * @author Nick van Dokkum
@@ -57,7 +57,6 @@ package
 
 		public function Players() 
 		{
-			
 			Main.main.stage.addEventListener(Event.ENTER_FRAME, updateFunction);
 			Main.main.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 			Main.main.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
@@ -103,7 +102,6 @@ package
 			if (e.keyCode == 13) {
 				buttonEnter = true;
 			}
-
 		}
 		public function onKeyUp(e:KeyboardEvent):void {
 			if (e.keyCode == 87) {

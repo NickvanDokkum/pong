@@ -51,14 +51,14 @@ package
 			{
 				gravity += 0.2;
 			}
-			if (ball.y < 0 -ball.width)
+			if (ball.y < 0 -ball.height)
 			{
 				if (lastHit == 1) {
-					Game.game.restart1();
+					Main.main._game.restart1();
 				}
 				else
 				{
-					Game.game.restart2();
+					Main.main._game.restart2();
 				}
 			}
 		}
