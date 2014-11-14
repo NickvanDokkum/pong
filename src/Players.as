@@ -57,7 +57,6 @@ package
 
 		public function Players() 
 		{
-			
 			Main.main.stage.addEventListener(Event.ENTER_FRAME, updateFunction);
 			Main.main.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 			Main.main.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
@@ -71,11 +70,6 @@ package
 			player2.x = 1000;
 			player2.y = 600;
 			Main.main.stage.addChild(player2);
-			
-			var s:Sound = new Sound(); 
-			s.addEventListener(Event.COMPLETE, onSoundLoaded); 
-			var req:URLRequest = new URLRequest("lib/jump.mp3"); 
-			s.load(req); 
 		}
 		public function onKeyDown(e:KeyboardEvent):void {
 			if (e.keyCode == 87) {
@@ -311,11 +305,6 @@ package
 		}
 		public function noCollRight2() {
 			collision24 = false;
-		}
-		function onSoundLoaded(event:Event):void 
-		{ 
-			var localSound:Sound = event.target as Sound; 
-			localSound.play(); 
 		}
 	}
 }
