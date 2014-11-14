@@ -16,8 +16,8 @@ package
 		public function Game() 
 		{
 			_chars = new Players();
-			_ball = new Ball();
 			_score = new Score;
+			_ball = new Ball();
 		}
 		public function restart1()
 		{
@@ -49,7 +49,7 @@ package
 		}
 		public function destroy()
 		{
-			_chars.destroy();
+			//_chars.destroy();
 		}
 	}
 

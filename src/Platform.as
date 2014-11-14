@@ -12,7 +12,7 @@ package  {
 		// temporary art
 		[Embed(source="../lib/Platform_Floating_Withplank.png")]
 		private var ArtPlatform_one:Class;
-		[Embed(source="../lib/Platform_Floating_Withplank.png")]
+		[Embed(source="../lib/Platform_Floating_2.png")]
 		private var ArtPlatform_two:Class;
 		[Embed(source = "../lib/Platform_2.png")]
 		private var ArtPlatform_three:Class;
@@ -22,7 +22,16 @@ package  {
 		private var ArtPlatform_five:Class;
 		[Embed(source = "../lib/Platform_2.png")]
 		private var ArtPlatform_six:Class;
-		
+		[Embed(source="../lib/Platform_Floating_withplank.png")]
+		private var ArtPlatform_seven:Class;
+		[Embed(source="../lib/Platform_Floating_floor_middle.png")]
+		private var ArtPlatform_eight:Class;
+		[Embed(source="../lib/Platform_Floating_floor.png")]
+		private var ArtPlatform_nine:Class;
+		[Embed(source="../lib/Platform_Floating_floor_middle.png")]
+		private var ArtPlatform_ten:Class;
+		[Embed(source="../lib/Platform_Floating_floor_middle.png")]
+		private var ArtPlatform_eleven:Class;
 		
 	
 		private var holder : Bitmap;
@@ -54,6 +63,21 @@ package  {
 					break;
 				case 6:
 					holder = new ArtPlatform_six();
+					break;
+				case 7:
+					holder = new ArtPlatform_seven();
+					break;
+				case 8:
+					holder = new ArtPlatform_eight();
+					break;
+				case 9:
+					holder = new ArtPlatform_nine();
+					break;
+				case 10:
+					holder = new ArtPlatform_ten();
+					break;
+				case 11:
+					holder = new ArtPlatform_eleven();
 					break;
 			
 				

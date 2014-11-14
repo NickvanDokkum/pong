@@ -27,10 +27,10 @@ package
 		public function Ball() 
 		{
 			ball = new BallArt();
-			ball.scaleX = 0.2;
-			ball.scaleY = 0.2;
+			ball.scaleX = 0.1;
+			ball.scaleY = 0.1;
 			ball.x = 600;
-			ball.y = 300;
+			ball.y = 100;
 			Main.main.stage.addChild(ball);
 			
 			Main.main.stage.addEventListener(Event.ENTER_FRAME, updateFunctionBall);
@@ -51,14 +51,14 @@ package
 			{
 				gravity += 0.2;
 			}
-			if (ball.y < 0 -ball.width)
+			if (ball.y < 0 -ball.height)
 			{
 				if (lastHit == 1) {
-					Game.game.restart1();
+					Main.main._game.restart1();
 				}
 				else
 				{
-					Game.game.restart2();
+					Main.main._game.restart2();
 				}
 			}
 		}

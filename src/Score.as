@@ -59,9 +59,7 @@ package
 			Main.main.stage.addChild(score02);
 			
 			score01.stop();
-			//Score11();
 			score02.stop();
-			//Score12();
 			score11.stop();
 			score12.stop();
 			score21.stop();
@@ -83,7 +81,6 @@ package
 			}
 			if (score11.currentFrame >= score11.totalFrames / 2 + 2 && score1 == 0) {
 				score11.stop();
-				//Score21();
 				score1++;
 			}
 			if (score02.currentFrame >= score02.totalFrames - 2) {
@@ -96,7 +93,6 @@ package
 			}
 			if (score12.currentFrame >= score12.totalFrames / 2 + 2 && score2 == 0) {
 				score12.stop();
-				//Score22();
 				score2++;
 			}
 			 if (score11.currentFrame >= score11.totalFrames - 2) {
@@ -109,7 +105,6 @@ package
 			}
 			if (score21.currentFrame >= score21.totalFrames / 2 + 3 && score1 == 1) {
 				score21.stop();
-				//Score31();
 				score1++;
 			}
 			if (score12.currentFrame >= score12.totalFrames - 2) {
@@ -122,7 +117,6 @@ package
 			}
 			if (score22.currentFrame >= score22.totalFrames / 2 + 3 && score2 == 1) {
 				score22.stop();
-				//Score32();
 				score2++;
 			}
 			if (score21.currentFrame >= score21.totalFrames - 2) {
