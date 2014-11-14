@@ -15,11 +15,11 @@ package
 	public class Level extends Sprite
 	{
 		
-		public var ball : Ball;
+		
 		public var platform : Platform;
 		public var background :BackGroundTemp;
 		public var tree : Tree;
-		public var player : Players;
+		
 		
 		
 		private var platforms:Array;
@@ -31,12 +31,12 @@ package
 			background = new BackGroundTemp;
 			addChild(background);
 			tree = new Tree;
-			addChild(tree);
+			Main.main.stage.addChild(tree);
 			
 			
 			//adding the platforms
 			platforms = new Array();
-			platforms.push(new Platform(1));
+			platforms.push (new Platform(1));
 			platforms.push(new Platform(2));
 			platforms.push(new Platform(3));
 			platforms.push(new Platform(4));
@@ -54,7 +54,7 @@ package
 			var l:int = platforms.length;
 			for (var i:int = 0; i < l; i++) 
 			{
-				addChild(platforms[i]);
+				Main.main.stage.addChild(platforms[i]);
 			}
 			//first platform position
 			platforms[0].x = 1182;
@@ -110,13 +110,7 @@ package
 			platforms[10].scaleX = 1;
 			platforms[10].scaleY = 1;
 			
-			player = new Players;
-			
-			
-			
-			ball  = new Ball;
-			
-			
+
 		}
 		
 		private function init(e:Event):void 
@@ -128,790 +122,790 @@ package
 		private function loop(e:Event):void 
 		{
 			
-			if (platforms[0].hitTestPoint(ball.x,ball.y ,true))
+			if (platforms[0].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
+				Main.main._game._ball.collBot();
 			}
-			else if (platforms[0].hitTestPoint(ball.x, ball.y , true))
+			else if (platforms[0].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
 			{
-				ball.collTop();
+				Main.main._game._ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
-			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft;
+				Main.main._game._ball.collLeft;
 			}
-			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight;
+				Main.main._game._ball.collRight;
 			}
 			
-			else if (platforms[0].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
 		
-				player.collBot1();
+				Main.main._game._chars.collBot1();
 			}
-			else if (platforms[0].hitTestPoint(player.x, player.y , true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			
-				player.collLeft2();
+				Main.main._game._chars.collLeft2();
 			}
-			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collRight2();
+				Main.main._game._chars.collRight2();
 			}
-			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 		
-				player.collTop2();
+				Main.main._game._chars.collTop2();
 			}
 			
-			else if (platforms[0].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
 				
-				player.collBot1();
+				Main.main._game._chars.collBot1();
 			}
-			else if (platforms[0].hitTestPoint(player.x, player.y , true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
+				Main.main._game._chars.collLeft1();
 				
 			}
-			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
+				Main.main._game._chars.collRight1();
 				
 			}
-			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			else if (platforms[0].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
-			}
-			
-			else if (platforms[1].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[1].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[1].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			else if (platforms[1].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			
-			else if (platforms[1].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[1].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[1].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			else if (platforms[1].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			
-			else if (platforms[1].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				
-				player.collBot1();
-			}
-			else if (platforms[1].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
-				
-			}
-			else if (platforms[1].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			else if (platforms[1].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
+				Main.main._game._chars.collTop1();
 				
 			}
 			
-			else if (platforms[2].hitTestPoint(ball.x,ball.y ,true))
+			else if (platforms[1].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
+				Main.main._game._ball.collBot();
 			}
-			else if (platforms[2].hitTestPoint(ball.x, ball.y , true))
+			else if (platforms[1].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
 			{
-				ball.collTop();
+				Main.main._game._ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
-			else if (platforms[2].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
+				Main.main._game._ball.collLeft();
 			}
-			else if (platforms[2].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[2].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[2].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[2].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			else if (platforms[2].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			
-				player.collLeft2();
+				Main.main._game._ball.collRight();
 			}
 			
-			else if (platforms[2].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collBot1();
-			}
-			else if (platforms[2].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
+				Main.main._game._chars.collBot2();
 				
 			}
-			else if (platforms[2].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
 				
+				Main.main._game._chars.collTop2();
 			}
-			else if (platforms[2].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
 				
+				Main.main._game._chars.collLeft2();
+			}
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
 			}
 			
-			else if (platforms[3].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[3].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[3].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			else if (platforms[3].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[3].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[3].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			
-				player.collTop2();
-				
-			}
-			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collRight2();
 				
+				Main.main._game._chars.collBot1();
 			}
-			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			
-			else if (platforms[3].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collBot1();
-			}
-			else if (platforms[3].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
+				Main.main._game._chars.collLeft1();
 				
 			}
-			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-			
+				Main.main._game._chars.collRight1();
 				
 			}
-			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			else if (platforms[1].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
+				Main.main._game._chars.collTop1();
 				
 			}
 			
-			else if (platforms[4].hitTestPoint(ball.x,ball.y ,true))
+			else if (platforms[2].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
+				Main.main._game._ball.collBot();
 			}
-			else if (platforms[4].hitTestPoint(ball.x, ball.y , true))
+			else if (platforms[2].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
 			{
-				ball.collTop();
+				Main.main._game._ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
-			else if (platforms[4].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[2].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
+				Main.main._game._ball.collRight();
 			}
-			else if (platforms[4].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[2].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			
-			else if (platforms[4].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[4].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			
-				player.collTop2();
-			}
-			else if (platforms[4].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			else if (platforms[4].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
+				Main.main._game._ball.collLeft();
 			}
 			
-			else if (platforms[4].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collBot1();
+				Main.main._game._chars.collTop2();
 			}
-			else if (platforms[4].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
-			}
-			else if (platforms[4].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
-				
-			}
-			else if (platforms[4].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			
-			else if (platforms[5].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[5].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[5].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			else if (platforms[5].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[5].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[5].hitTestPoint(player.x, player.y , true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collTop2();
+				Main.main._game._chars.collRight2();
 			}
-			else if (platforms[5].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			else if (platforms[5].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			
-			else if (platforms[5].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collBot1();
-			}
-			else if (platforms[5].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
-			}
-			else if (platforms[5].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			else if (platforms[5].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
-				
-			}
-			
-			else if (platforms[6].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[6].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[6].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			else if (platforms[6].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[6].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[6].hitTestPoint(player.x, player.y , true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			
-				player.collTop2();
-			}
-			else if (platforms[6].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			else if (platforms[6].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
+				Main.main._game._chars.collLeft2();
 			}
 			
-			else if (platforms[6].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collBot1();
+				Main.main._game._chars.collBot1();
 			}
-			else if (platforms[6].hitTestPoint(player.x, player.y , true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
+				Main.main._game._chars.collTop1();
 				
 			}
-			else if (platforms[6].hitTestPoint(player.x , player.y, true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
+				Main.main._game._chars.collRight1();
 				
 			}
-			else if (platforms[6].hitTestPoint(player.x , player.y, true))
+			else if (platforms[2].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
+				Main.main._game._chars.collLeft1();
 				
 			}
 			
-			else if (platforms[7].hitTestPoint(ball.x,ball.y ,true))
+			else if (platforms[3].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
+				Main.main._game._ball.collBot();
 			}
-			else if (platforms[7].hitTestPoint(ball.x, ball.y , true))
+			else if (platforms[3].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
 			{
-				ball.collTop();
+				Main.main._game._ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
-			else if (platforms[7].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[3].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
+				Main.main._game._ball.collRight();
 			}
-			else if (platforms[7].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[3].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[7].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collBot1();
-			}
-			else if (platforms[7].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[7].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			else if (platforms[7].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
+				Main.main._game._ball.collLeft();
 			}
 			
-			else if (platforms[7].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
+				Main.main._game._chars.collBot2();
 				
 			}
-			else if (platforms[7].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
-			}
-			else if (platforms[7].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
-				
-			}
-			else if (platforms[7].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			
-			else if (platforms[8].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[8].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[8].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			else if (platforms[8].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[8].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-			
-			}
-			else if (platforms[8].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[8].hitTestPoint(player.x , player.y, true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			
-				player.collRight2();
+				Main.main._game._chars.collTop2();
+				
 			}
-			else if (platforms[8].hitTestPoint(player.x , player.y, true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collLeft2();
+				Main.main._game._chars.collRight2();
+				
+			}
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
 			}
 			
-			else if (platforms[8].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot1();
+				
+				Main.main._game._chars.collBot1();
 			}
-			else if (platforms[8].hitTestPoint(player.x, player.y , true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
+				Main.main._game._chars.collTop1();
+				
 				
 			}
-			else if (platforms[8].hitTestPoint(player.x , player.y, true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			else if (platforms[8].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
-				
-			}
+				Main.main._game._chars.collRight1();
 			
-			else if (platforms[9].hitTestPoint(ball.x,ball.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
-			}
-			else if (platforms[9].hitTestPoint(ball.x, ball.y , true))
-			{
-				ball.collTop();
-				trace("t778597597549455454hfdvhbjdfhjdf");
-			}
-			else if (platforms[9].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
-			}
-			else if (platforms[9].hitTestPoint(ball.x , ball.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[9].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
 				
 			}
-			else if (platforms[9].hitTestPoint(player.x, player.y , true))
+			else if (platforms[3].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[9].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			else if (platforms[9].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
-			}
-			
-			else if (platforms[9].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collBot1();
-			}
-			else if (platforms[9].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
-				
-			}
-			else if (platforms[9].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
-				
-			}
-			else if (platforms[9].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
+				Main.main._game._chars.collLeft1();
 				
 			}
 			
-			else if (platforms[10].hitTestPoint(ball.x,ball.y ,true))
+			else if (platforms[4].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collBot();
+				Main.main._game._ball.collBot();
 			}
-			else if (platforms[10].hitTestPoint(ball.x, ball.y , true))
+			else if (platforms[4].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
 			{
-				ball.collTop();
+				Main.main._game._ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
-			else if (platforms[10].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[4].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collRight();
+				Main.main._game._ball.collLeft();
 			}
-			else if (platforms[10].hitTestPoint(ball.x , ball.y, true))
+			else if (platforms[4].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				ball.collLeft();
-			}
-			
-			else if (platforms[10].hitTestPoint(player.x,player.y ,true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collBot2();
-				
-			}
-			else if (platforms[10].hitTestPoint(player.x, player.y , true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collTop2();
-			}
-			else if (platforms[10].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collRight2();
-			}
-			else if (platforms[10].hitTestPoint(player.x , player.y, true))
-			{
-				trace("t778597597549455454hfdvhbjdfhjdf");
-				
-				player.collLeft2();
+				Main.main._game._ball.collRight();
 			}
 			
-			else if (platforms[10].hitTestPoint(player.x,player.y ,true))
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
-				player.collBot1();
+				Main.main._game._chars.collLeft2();
 			}
-			else if (platforms[10].hitTestPoint(player.x, player.y , true))
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collTop1();
+				
+				Main.main._game._chars.collRight2();
+			}
+			
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
 				
 			}
-			else if (platforms[10].hitTestPoint(player.x , player.y, true))
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collRight1();
+				Main.main._game._chars.collLeft1();
 				
 			}
-			else if (platforms[10].hitTestPoint(player.x , player.y, true))
+			else if (platforms[4].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				player.collLeft1();
+				Main.main._game._chars.collRight1();
+				
+			}
+			
+			else if (platforms[5].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			else if (platforms[5].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
+				
+			}
+			
+			else if (platforms[6].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			else if (platforms[6].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
+				
+			}
+			
+			else if (platforms[7].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
+			}
+			
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
+				
+			}
+			else if (platforms[7].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			
+			else if (platforms[8].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+			
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				Main.main._game._chars.collRight2();
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			else if (platforms[8].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
+				
+			}
+			
+			else if (platforms[9].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			else if (platforms[9].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
+				
+			}
+			
+			else if (platforms[10].hitTestPoint(Main.main._game._ball.x,Main.main._game._ball.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collBot();
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._ball.x, Main.main._game._ball.y , true))
+			{
+				Main.main._game._ball.collTop();
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collRight();
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._ball.x , Main.main._game._ball.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._ball.collLeft();
+			}
+			
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collBot2();
+				
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collTop2();
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collRight2();
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collLeft2();
+			}
+			
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x,Main.main._game._chars.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				Main.main._game._chars.collBot1();
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x, Main.main._game._chars.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collTop1();
+				
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collRight1();
+				
+			}
+			else if (platforms[10].hitTestPoint(Main.main._game._chars.x , Main.main._game._chars.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				Main.main._game._chars.collLeft1();
 				
 			}
 			

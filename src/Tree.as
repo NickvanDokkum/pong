@@ -21,7 +21,7 @@ package
 		public function Tree() 
 		{
 			artTree_one = new ArtTree_two;
-			addChild(artTree_one);
+			Main.main.stage.addChild(artTree_one);
 			artTree_one.scaleX = -0.25;
 			artTree_one.scaleY = 0.25;
 			artTree_one.x = 360;
@@ -29,7 +29,7 @@ package
 		
 			
 			artTree_two = new ArtTree_two;
-			addChild(artTree_two);
+			Main.main.stage.addChild(artTree_two);
 			artTree_two.scaleX = 0.50;
 			artTree_two.scaleY = 0.50;
 			artTree_two.x = 917;
