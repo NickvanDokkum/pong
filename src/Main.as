@@ -10,7 +10,7 @@ package
 	public class Main extends Sprite 
 	{
 		public static var main: Main;
-		public var _game :Game;
+		//public var _game :Game;
 		public var level : Level; 
 		public var _gameYosha:YoshaGame;
 		public function Main():void 
@@ -23,7 +23,7 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			main = this;
-			_game = new Game;
+		//	_game = new Game;
 			_gameYosha = new YoshaGame;
 			addChild(_gameYosha);
 		}

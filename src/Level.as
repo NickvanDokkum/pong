@@ -14,6 +14,7 @@ package
 	
 	public class Level extends Sprite
 	{
+		
 		public var ball : Ball;
 		public var platform : Platform;
 		public var background :BackGroundTemp;
@@ -29,7 +30,8 @@ package
 			
 			background = new BackGroundTemp;
 			addChild(background);
-			
+			tree = new Tree;
+			addChild(tree);
 			
 			
 			//adding the platforms
@@ -110,8 +112,7 @@ package
 			
 			player = new Players;
 			
-			tree = new Tree;
-			addChild(tree);
+			
 			
 			ball  = new Ball;
 			
@@ -140,32 +141,63 @@ package
 			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft;
 			}
 			else if (platforms[0].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight;
 			}
 			
-			else if (platforms[0].hitTestPoint(player.x,player.y ,false))
+			else if (platforms[0].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+		
 				player.collBot1();
 			}
 			else if (platforms[0].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+			
+				player.collLeft2();
 			}
 			else if (platforms[0].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[0].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+		
+				player.collTop2();
+			}
+			
+			else if (platforms[0].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				
+				player.collBot1();
+			}
+			else if (platforms[0].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
+				
+			}
+			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[0].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
 				
 			}
 			
@@ -176,38 +208,68 @@ package
 			}
 			else if (platforms[1].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[1].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			else if (platforms[1].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			
 			else if (platforms[1].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[1].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
 			}
 			else if (platforms[1].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collLeft2();
 			}
 			else if (platforms[1].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collRight2();
+			}
+			
+			else if (platforms[1].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				
+				player.collBot1();
+			}
+			else if (platforms[1].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
+				
+			}
+			else if (platforms[1].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[1].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
 				
 			}
 			
@@ -218,38 +280,67 @@ package
 			}
 			else if (platforms[2].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[2].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[2].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[2].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[2].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
 			}
 			else if (platforms[2].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[2].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				player.collLeft2();
+			}
+			
+			else if (platforms[2].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[2].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[2].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[2].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
@@ -260,41 +351,73 @@ package
 			}
 			else if (platforms[3].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[3].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[3].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[3].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[3].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				player.collTop2();
 				
 			}
 			else if (platforms[3].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
+				
 			}
 			else if (platforms[3].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collLeft2();
 			}
 			
+			else if (platforms[3].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[3].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+				
+			}
+			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+			
+				
+			}
+			else if (platforms[3].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
+				
+			}
 			
 			else if (platforms[4].hitTestPoint(ball.x,ball.y ,true))
 			{
@@ -303,38 +426,67 @@ package
 			}
 			else if (platforms[4].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[4].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			else if (platforms[4].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			
 			else if (platforms[4].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[4].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+			
+				player.collTop2();
 			}
 			else if (platforms[4].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collLeft2();
 			}
 			else if (platforms[4].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collRight2();
+			}
+			
+			else if (platforms[4].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[4].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[4].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
+				
+			}
+			else if (platforms[4].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
 				
 			}
 			
@@ -345,38 +497,67 @@ package
 			}
 			else if (platforms[5].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[5].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[5].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[5].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[5].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
 			}
 			else if (platforms[5].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[5].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collLeft2();
+			}
+			
+			else if (platforms[5].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[5].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[5].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[5].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
@@ -387,38 +568,67 @@ package
 			}
 			else if (platforms[6].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[6].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[6].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[6].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[6].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+			
+				player.collTop2();
 			}
 			else if (platforms[6].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[6].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collLeft2();
+			}
+			
+			else if (platforms[6].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[6].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[6].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[6].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
@@ -429,38 +639,67 @@ package
 			}
 			else if (platforms[7].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[7].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[7].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				ball.collLeft();
+			}
+			
+			else if (platforms[7].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collBot1();
+			}
+			else if (platforms[7].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collTop2();
+			}
+			else if (platforms[7].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collLeft2();
+			}
+			else if (platforms[7].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collRight2();
 			}
 			
 			else if (platforms[7].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[7].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
 				
 			}
 			else if (platforms[7].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			else if (platforms[7].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
 				
 			}
 			
@@ -471,38 +710,66 @@ package
 			}
 			else if (platforms[8].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[8].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[8].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[8].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+			
 			}
 			else if (platforms[8].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
+			}
+			else if (platforms[8].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+			
+				player.collRight2();
 			}
 			else if (platforms[8].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collLeft2();
+			}
+			
+			else if (platforms[8].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collBot1();
+			}
+			else if (platforms[8].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
 			}
 			else if (platforms[8].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[8].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
@@ -513,38 +780,67 @@ package
 			}
 			else if (platforms[9].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[9].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[9].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[9].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[9].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
 			}
 			else if (platforms[9].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[9].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collLeft2();
+			}
+			
+			else if (platforms[9].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[9].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[9].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[9].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
@@ -555,38 +851,67 @@ package
 			}
 			else if (platforms[10].hitTestPoint(ball.x, ball.y , true))
 			{
-				
+				ball.collTop();
 				trace("t778597597549455454hfdvhbjdfhjdf");
 			}
 			else if (platforms[10].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collRight();
 			}
 			else if (platforms[10].hitTestPoint(ball.x , ball.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
-				
+				ball.collLeft();
 			}
 			
 			else if (platforms[10].hitTestPoint(player.x,player.y ,true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				player.collBot2();
+				
 			}
 			else if (platforms[10].hitTestPoint(player.x, player.y , true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collTop2();
 			}
 			else if (platforms[10].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
 				
+				player.collRight2();
 			}
 			else if (platforms[10].hitTestPoint(player.x , player.y, true))
 			{
 				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collLeft2();
+			}
+			
+			else if (platforms[10].hitTestPoint(player.x,player.y ,true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				
+				player.collBot1();
+			}
+			else if (platforms[10].hitTestPoint(player.x, player.y , true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collTop1();
+				
+			}
+			else if (platforms[10].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collRight1();
+				
+			}
+			else if (platforms[10].hitTestPoint(player.x , player.y, true))
+			{
+				trace("t778597597549455454hfdvhbjdfhjdf");
+				player.collLeft1();
 				
 			}
 			
